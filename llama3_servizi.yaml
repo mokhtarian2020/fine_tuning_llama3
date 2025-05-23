@@ -1,0 +1,19 @@
+base_model: /mnt/c/Users/Utente/models/llama3.1
+model_type: llama
+adapter: lora
+load_in_4bit: false
+device_map: auto
+
+micro_batch_size: 1
+gradient_accumulation_steps: 4
+epochs: 3
+learning_rate: 2e-4
+cutoff_len: 512
+output_dir: /mnt/e/amir/fine_tuning_ollama/llama3.1-lora-servizi
+
+datasets:
+  - path: /mnt/e/amir/fine_tuning_ollama/emails_alpaca.json
+    type: alpaca
+
+quantization:
+  load_format: gguf
